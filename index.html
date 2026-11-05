@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Verde Amarelha Express – distribuidor exclusivo de lubricantes CAM2 en Huancayo. Catálogo, cotizaciones y atención por WhatsApp.">
+<title>Verde Amarelha Express | CAM2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050a08;--panel:#0b1510;--panel2:#101d15;--line:#203329;--green:#a7ff43;--green2:#16c65b;--muted:#9aa99e;--white:#f3f8f4}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 8% 20%,#07351c 0,transparent 28%),radial-gradient(ellipse at 95% 70%,#302708 0,transparent 26%),var(--bg);color:var(--white);font-family:Inter,Arial,sans-serif}
+a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:#050a08ed;backdrop-filter:blur(14px);border-bottom:1px solid #17251c}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:1.5px;font-size:13px}.brand img{width:48px;height:48px;object-fit:contain;background:#fff;border-radius:5px}.brand small{display:block;color:var(--green);font-size:9px;letter-spacing:2px;margin-top:4px}
+nav{display:flex;align-items:center;gap:25px;font-size:12px;color:#b8c4bb}nav a:hover{color:var(--green)}.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid #33513b;background:linear-gradient(135deg,#16c65b,#078c40);padding:13px 19px;border-radius:12px;color:white;font-size:12px;font-weight:800;box-shadow:0 8px 30px #0db84b25;transition:.2s}.btn:hover{transform:translateY(-2px);filter:brightness(1.12)}.btn.outline{background:transparent;border-color:#526b56;color:var(--green)}
+.hero{padding:66px 0 46px}.eyebrow{font-size:10px;letter-spacing:3px;color:var(--green);font-weight:800;text-transform:uppercase}.hero h1{font-family:Orbitron,Inter,sans-serif;font-size:clamp(36px,6vw,64px);line-height:1.08;letter-spacing:-2px;margin:16px 0}.hero h1 span{color:var(--green)}.hero p{max-width:620px;color:#aab8ae;line-height:1.8;font-size:15px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}.hero-logo{display:flex;justify-content:center;align-items:center;min-height:270px}.hero-logo img{width:min(300px,80%);max-height:300px;object-fit:contain;filter:drop-shadow(0 18px 35px #000)}
+section{padding:42px 0}.section-head{margin-bottom:22px}.section-head h2{font-family:Orbitron,Inter,sans-serif;font-size:clamp(23px,3vw,34px);margin:9px 0}.section-head p{color:var(--muted);line-height:1.7;max-width:700px;font-size:14px}
+.about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.about-card,.info-card,.product-card,.feature{background:linear-gradient(145deg,#0d1912,#09110d);border:1px solid var(--line);border-radius:20px;padding:24px}.about-card{display:grid;grid-template-columns:190px 1fr;gap:24px;align-items:center}.about-card img{width:100%;background:#fff;border-radius:15px;padding:10px}.about-card h3{font-size:22px;margin:0 0 12px}.about-card p,.info-card p,.feature p{font-size:12px;color:var(--muted);line-height:1.8}.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.info-card{padding:19px}.info-card .ico{font-size:22px}.info-card h4{margin:10px 0 5px;font-size:13px}.features{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.feature{padding:20px}.feature b{color:var(--green);font-family:Orbitron;font-size:12px}.feature h3{font-size:14px;margin:12px 0 7px}
+.catalog-top{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}.filters{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 22px}.filter{border:1px solid #304337;background:#0b1510;color:#c3d0c6;border-radius:30px;padding:9px 14px;font-size:11px;cursor:pointer}.filter.active,.filter:hover{background:#18351f;border-color:var(--green);color:var(--green)}.products{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.product-card{padding:13px;overflow:hidden;transition:.2s}.product-card:hover{transform:translateY(-4px);border-color:#618b4d}.product-card img{width:100%;height:190px;object-fit:contain;background:#f5f7f5;border-radius:13px}.product-card h3{font-size:15px;margin:14px 4px 6px}.product-card p{font-size:11px;line-height:1.65;color:var(--muted);margin:0 4px 12px;min-height:36px}.tag{display:inline-block;margin:0 4px 12px;background:#1b3020;color:var(--green);border-radius:20px;padding:6px 9px;font-size:9px;font-weight:700}.product-card button{width:100%;border:1px solid #34513b;background:#101f15;color:var(--green);padding:11px;border-radius:10px;font-weight:700;cursor:pointer}.product-card button:hover{background:#18351f}
+.pdf-panel{display:flex;justify-content:space-between;align-items:center;gap:20px;background:linear-gradient(120deg,#102417,#0a120d);border:1px solid #294532;padding:24px;border-radius:18px}.pdf-panel p{color:var(--muted);font-size:12px;line-height:1.7}.quote-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px}.quote-info{background:#102017;border:1px solid var(--line);border-radius:18px;padding:25px}.quote-info h3{font-family:Orbitron;font-size:20px}.quote-info p{color:var(--muted);font-size:13px;line-height:1.8}.form{background:#0b1510;border:1px solid var(--line);padding:25px;border-radius:18px;display:grid;gap:13px}.form label{font-size:11px;color:#b9c7bd;font-weight:700}.form input,.form select,.form textarea{width:100%;margin-top:7px;background:#060d09;border:1px solid #2b4032;border-radius:9px;padding:12px;color:white;font:inherit;font-size:13px}.form textarea{min-height:90px;resize:vertical}.form button{border:0;cursor:pointer;font:inherit}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.contact-card{background:#0b1510;border:1px solid var(--line);border-radius:16px;padding:22px}.contact-card h3{font-size:14px}.contact-card p{font-size:12px;color:var(--muted);line-height:1.7}
+footer{border-top:1px solid #1a2a20;padding:25px 0;color:#87958b;font-size:11px}.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.whatsapp-float{position:fixed;right:22px;bottom:22px;z-index:9;background:#16c65b;color:white;padding:14px 18px;border-radius:30px;font-weight:800;font-size:12px;box-shadow:0 8px 30px #0008}
+@media(max-width:800px){nav{gap:12px;font-size:10px}.nav{height:auto;min-height:70px;flex-wrap:wrap;padding:10px 0}.nav .btn{padding:10px}.hero-grid,.about-grid,.quote-grid{grid-template-columns:1fr}.hero-logo{min-height:170px}.hero-logo img{max-height:190px}.features{grid-template-columns:1fr 1fr}.products{grid-template-columns:1fr 1fr}.about-card{grid-template-columns:130px 1fr}}
+@media(max-width:540px){nav{width:100%;justify-content:space-between;overflow:auto;padding-bottom:8px}.nav{gap:10px}.brand{font-size:11px}.brand img{width:40px;height:40px}.hero{padding-top:40px}.about-card{grid-template-columns:1fr}.about-card img{max-width:180px;margin:auto}.products{grid-template-columns:1fr}.product-card img{height:220px}.contact-grid{grid-template-columns:1fr}.features{grid-template-columns:1fr 1fr}.pdf-panel{align-items:flex-start;flex-direction:column}}
+
+/* Asistente IA Verde Amarelha */
+.ai-launcher{position:fixed;right:22px;bottom:82px;z-index:30;border:0;border-radius:50px;background:linear-gradient(135deg,#a7ff43,#16c65b);color:#071109;padding:14px 18px;font-weight:900;font-size:12px;cursor:pointer;box-shadow:0 10px 35px #0009;display:flex;align-items:center;gap:9px}
+.ai-launcher .bot-dot{width:25px;height:25px;border-radius:50%;background:#092010;color:#a7ff43;display:grid;place-items:center;font-size:15px}
+.ai-chat{position:fixed;right:22px;bottom:140px;width:min(370px,calc(100vw - 28px));height:min(560px,calc(100vh - 170px));z-index:31;background:#08110b;border:1px solid #35533b;border-radius:20px;box-shadow:0 25px 80px #000b;display:none;overflow:hidden;flex-direction:column}
+.ai-chat.open{display:flex}
+.ai-chat-head{padding:15px;background:linear-gradient(120deg,#102a18,#09130d);border-bottom:1px solid #263c2b;display:flex;align-items:center;gap:10px}
+.ai-avatar{width:39px;height:39px;border-radius:50%;background:#a7ff43;color:#061008;display:grid;place-items:center;font-size:19px;font-weight:900}
+.ai-head-text{flex:1}.ai-head-text strong{font-size:13px;display:block}.ai-head-text small{font-size:10px;color:#9bdc91}
+.ai-close{background:transparent;border:0;color:#d7e5d9;font-size:23px;cursor:pointer}
+.ai-messages{padding:14px;display:flex;flex-direction:column;gap:10px;overflow:auto;flex:1}
+.ai-msg{max-width:88%;padding:11px 12px;border-radius:13px;font-size:12px;line-height:1.6;white-space:pre-wrap;overflow-wrap:anywhere}
+.ai-msg.bot{background:#14251a;border:1px solid #263e2d;color:#e4eee6;align-self:flex-start;border-bottom-left-radius:4px}
+.ai-msg.user{background:#1c6335;color:white;align-self:flex-end;border-bottom-right-radius:4px}
+.ai-quick{padding:0 12px 10px;display:flex;gap:6px;flex-wrap:wrap}
+.ai-quick button{background:#101f15;border:1px solid #38533d;color:#b8f28b;border-radius:20px;padding:7px 9px;font-size:10px;cursor:pointer}
+.ai-input-row{padding:11px;border-top:1px solid #263c2b;display:flex;gap:7px;background:#0a150e}
+.ai-input-row input{min-width:0;flex:1;background:#050b07;border:1px solid #304735;border-radius:20px;padding:11px 13px;color:white;font-size:12px;outline:none}
+.ai-input-row button{width:40px;border:0;border-radius:50%;background:#a7ff43;color:#061008;font-size:17px;font-weight:900;cursor:pointer}
+.ai-disclaimer{padding:0 13px 10px;color:#7f9083;font-size:9px;line-height:1.4;background:#0a150e}
+.ai-typing{color:#a7ff43;font-size:11px;padding:0 14px 8px;display:none}
+@media(max-width:540px){.ai-launcher{right:14px;bottom:76px}.ai-chat{right:10px;bottom:132px;width:calc(100vw - 20px);height:min(570px,calc(100vh - 150px))}}
+
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="#inicio"><img src="assets/logo-grupo-amarelha.png" alt="Logo Grupo Amarelha"><span>VERDE AMARELHA<small>EXPRESS · CAM2</small></span></a>
+<nav><a href="#inicio">Inicio</a><a href="#empresa">Empresa</a><a href="#catalogo">Catálogo</a><a href="#cotizador">Cotizador</a><a href="#contacto">Contacto</a></nav>
+<a class="btn" href="https://wa.me/51950893901" target="_blank">WhatsApp ↗</a>
+</div></header>
+<main>
+<section class="hero" id="inicio"><div class="wrap hero-grid"><div>
+<div class="eyebrow">Portal comercial · Distribuidor exclusivo</div>
+<h1>Verde Amarelha <span>Express</span></h1>
+<p>Una propuesta comercial moderna para acercar los lubricantes CAM2 a conductores, clientes y talleres de Huancayo. Encuentra productos para motores, transmisiones y mantenimiento automotriz.</p>
+<div class="hero-actions"><a class="btn" href="#catalogo">Ver catálogo</a><a class="btn outline" href="#cotizador">Solicitar cotización</a></div>
+</div><div class="hero-logo"><img src="assets/logo-grupo-amarelha.png" alt="Grupo Amarelha, distribuidor exclusivo"></div></div></section>
+<section id="empresa"><div class="wrap"><div class="section-head"><div class="eyebrow">Conócenos</div><h2>Una atención más clara y cercana.</h2></div>
+<div class="about-grid"><article class="about-card"><img src="assets/logo-grupo-amarelha.png" alt="Logo Grupo Amarelha"><div><h3>¿Quiénes somos?</h3><p>Verde Amarelha Express – CAM2 se plantea como un canal comercial especializado en lubricantes y soluciones para mantenimiento automotriz. La plataforma busca ordenar la información de productos, facilitar la cotización y mejorar la comunicación con el cliente.</p><p>Atendemos a propietarios de vehículos particulares, conductores de transporte público o privado y talleres automotrices aliados.</p></div></article>
+<div class="info-grid"><div class="info-card"><div class="ico">📍</div><h4>Dirección</h4><p>Av. Ferrocarril 1967<br>El Tambo, Huancayo</p></div><div class="info-card"><div class="ico">📲</div><h4>Atención</h4><p>950 893 901<br>Consultas y pedidos</p></div><div class="info-card"><div class="ico">🛢️</div><h4>Especialidad</h4><p>Lubricantes CAM2<br>Automóviles · Diésel · Motos</p></div><div class="info-card"><div class="ico">⚙️</div><h4>Propuesta digital</h4><p>Catálogo + cotizador + WhatsApp</p></div></div></div></div></section>
+<section><div class="wrap"><div class="section-head"><div class="eyebrow">El problema que resuelve</div><h2>Una experiencia más <span style="color:var(--green)">clara y rápida.</span></h2></div><div class="features">
+<div class="feature"><b>01</b><h3>Costos transparentes</h3><p>Organiza la información comercial y permite solicitar una cotización.</p></div>
+<div class="feature"><b>02</b><h3>Información técnica</h3><p>Presenta viscosidades y especificaciones del catálogo de manera sencilla.</p></div>
+<div class="feature"><b>03</b><h3>Menos tiempos muertos</h3><p>Reduce la incertidumbre sobre productos, atención y disponibilidad.</p></div>
+<div class="feature"><b>04</b><h3>Conexión digital</h3><p>Fortalece la presencia del distribuidor ante clientes y talleres.</p></div>
+</div></div></section>
+<section id="catalogo"><div class="wrap"><div class="catalog-top"><div class="section-head"><div class="eyebrow">Productos CAM2</div><h2>Catálogo de lubricantes</h2><p>Explora las líneas que aparecen en el catálogo CAM2 agosto 2026. Consulta disponibilidad y presentación por WhatsApp.</p></div><a class="btn outline" href="assets/catalogo-cam2-agosto-2026.pdf" target="_blank">Abrir catálogo PDF ↗</a></div>
+<div class="filters" id="filters"><button class="filter active" data-filter="all">Todos</button><button class="filter" data-filter="gasolina">Gasolineros</button><button class="filter" data-filter="diesel">Petroleros / Diésel</button><button class="filter" data-filter="transmision">Transmisiones</button><button class="filter" data-filter="grasas">Grasas</button><button class="filter" data-filter="motos">Motos 4T</button></div>
+<div class="products" id="products">
+<article class="product-card" data-cat="gasolina"><img src="assets/catalogo-pagina-1.jpg" alt="Aceites gasolineros sintéticos CAM2"><span class="tag">GASOLINEROS</span><h3>Full sintético 5W40</h3><p>Para diésel y gasolina · API SP · ACEA A3/B4 · 3x1 y 12x1.</p><button onclick="askProduct('Full sintético 5W40')">Consultar producto</button></article>
+<article class="product-card" data-cat="gasolina"><img src="assets/catalogo-pagina-1.jpg" alt="Aceite full sintético CAM2 5W30"><span class="tag">GASOLINEROS</span><h3>Full sintético 5W30</h3><p>API SP · GF-6 · presentaciones 3x1 y 12x1.</p><button onclick="askProduct('Full sintético 5W30')">Consultar producto</button></article>
+<article class="product-card" data-cat="gasolina"><img src="assets/catalogo-pagina-2.jpg" alt="Aceites semi sintéticos CAM2"><span class="tag">GASOLINEROS</span><h3>Semi-sintético 10W30 / 10W40</h3><p>API SP · GF-6A · presentaciones 3x1 y 12x1.</p><button onclick="askProduct('Semi-sintético 10W30 / 10W40')">Consultar producto</button></article>
+<article class="product-card" data-cat="gasolina"><img src="assets/catalogo-pagina-3.jpg" alt="Aceites minerales gasolineros CAM2"><span class="tag">GASOLINEROS</span><h3>Minerales y multigrados</h3><p>10W30 / 20W50 GF-6A, MGT 10W40 API SP, HK 25W60 API SG y SAE 40–50.</p><button onclick="askProduct('Minerales y multigrados gasolineros')">Consultar producto</button></article>
+<article class="product-card" data-cat="diesel"><img src="assets/catalogo-pagina-4.jpg" alt="Aceites petroleros semi sintéticos CAM2"><span class="tag">PETROLEROS</span><h3>Semi-sintético SAE 10W40 / 15W40</h3><p>CK-4 / SN · presentación balde de 5 galones.</p><button onclick="askProduct('Petrolero semi-sintético SAE 10W40 / 15W40')">Consultar producto</button></article>
+<article class="product-card" data-cat="diesel"><img src="assets/catalogo-pagina-5.jpg" alt="Aceites petroleros minerales CAM2"><span class="tag">PETROLEROS</span><h3>Minerales diésel</h3><p>SAE 15W40 CI-4 Base 2, 25W50 CF-4 y 25W60 CF-4. Presentación 5 galones y 208 litros según producto.</p><button onclick="askProduct('Aceites petroleros minerales diésel')">Consultar producto</button></article>
+<article class="product-card" data-cat="transmision"><img src="assets/catalogo-pagina-6.jpg" alt="Lubricantes de transmisión CAM2"><span class="tag">TRANSMISIONES</span><h3>Gear Lubricant API GL-5</h3><p>SAE 80W90 / 85W140 · presentaciones 5 galones y 12x1/4.</p><button onclick="askProduct('Gear Lubricant API GL-5')">Consultar producto</button></article>
+<article class="product-card" data-cat="transmision"><img src="assets/catalogo-pagina-7.jpg" alt="Lubricantes hidráulicos CAM2"><span class="tag">TRANSMISIONES E HIDRÁULICOS</span><h3>ATF D3M e Hydrofluid AW ISO 68</h3><p>ATF D3M (hidrolina) y lubricante para sistema hidráulico Hydrofluid AW ISO 68.</p><button onclick="askProduct('ATF D3M e Hydrofluid AW ISO 68')">Consultar producto</button></article>
+<article class="product-card" data-cat="grasas"><img src="assets/catalogo-pagina-8.jpg" alt="Grasas CAM2"><span class="tag">GRASAS</span><h3>Grasas de litio y calcio</h3><p>MP Red Grease NLGI 3 multipropósito de litio y MP Red LDGrease NLGI 3 de calcio roja · 16 kg.</p><button onclick="askProduct('Grasas de litio y calcio NLGI 3')">Consultar producto</button></article>
+<article class="product-card" data-cat="motos"><img src="assets/catalogo-pagina-8.jpg" alt="Aceites para motos CAM2 4 tiempos"><span class="tag">MOTOS 4T</span><h3>X-Cross 1 y X-Cross Pro 4T</h3><p>Full sintético 10W40 API SP/JASO MA2 y semi-sintético 15W50 API SN/JASO MA2.</p><button onclick="askProduct('X-Cross 1 / X-Cross Pro 4T')">Consultar producto</button></article>
+<article class="product-card" data-cat="motos"><img src="assets/catalogo-pagina-8.jpg" alt="Aceite mineral para motocicletas CAM2"><span class="tag">MOTOS 4T</span><h3>Motorcycle 4T multigrado</h3><p>Mineral API SN/JASO MA2 · 20W50 / 25W60 · 12x1 litro.</p><button onclick="askProduct('Motorcycle 4T multigrado')">Consultar producto</button></article>
+</div>
+<div class="pdf-panel" style="margin-top:22px"><div><b>¿Necesitas revisar todas las presentaciones?</b><p>Consulta el documento original del catálogo CAM2 agosto 2026 para ver las páginas y referencias completas.</p></div><a class="btn" href="assets/catalogo-cam2-agosto-2026.pdf" target="_blank">Ver catálogo completo</a></div>
+</div></section>
+<section id="cotizador"><div class="wrap"><div class="section-head"><div class="eyebrow">Atención personalizada</div><h2>Solicita tu cotización</h2><p>Cuéntanos qué producto necesitas. Prepararemos tu consulta para enviarla directamente por WhatsApp.</p></div>
+<div class="quote-grid"><div class="quote-info"><h3>¿No sabes cuál elegir?</h3><p>Indícanos el tipo de vehículo, motor o producto que buscas. Nuestro equipo podrá orientarte sobre las alternativas del catálogo y confirmar disponibilidad y precio.</p><p><b style="color:var(--green)">Atención:</b> lunes a sábado, previa coordinación.</p><a class="btn" href="https://wa.me/51950893901" target="_blank">Hablar por WhatsApp ↗</a></div>
+<form class="form" id="quoteForm"><label>Nombre<input id="name" required placeholder="Tu nombre"></label><label>Producto de interés<select id="product"><option value="">Selecciona un producto</option><option>Full sintético 5W40</option><option>Full sintético 5W30</option><option>Semi-sintético gasolinero</option><option>Aceites petroleros / diésel</option><option>Lubricantes de transmisión</option><option>ATF D3M / Hydrofluid AW ISO 68</option><option>Grasas CAM2</option><option>Aceites para motos 4T</option><option>Otro / necesito orientación</option></select></label><label>Tipo de vehículo<input id="vehicle" placeholder="Ej. automóvil, camioneta, camión, moto"></label><label>Mensaje<textarea id="message" placeholder="Indica viscosidad, presentación o cantidad que necesitas (opcional)"></textarea></label><button class="btn" type="submit">Enviar consulta por WhatsApp ↗</button></form></div></div></section>
+<section id="contacto"><div class="wrap"><div class="section-head"><div class="eyebrow">Estamos para atenderte</div><h2>Contacto y ubicación</h2></div><div class="contact-grid"><div class="contact-card"><div class="ico">📍</div><h3>Visítanos</h3><p>Av. Ferrocarril 1967<br>El Tambo, Huancayo, Junín</p></div><div class="contact-card"><div class="ico">📞</div><h3>Comunícate</h3><p>950 893 901<br>Consultas, pedidos y cotizaciones.</p><a style="color:var(--green);font-size:12px" href="https://wa.me/51950893901" target="_blank">Abrir WhatsApp ↗</a></div><div class="contact-card"><div class="ico">🛢️</div><h3>Distribución</h3><p>Grupo Amarelha SAC<br>Distribuidor exclusivo · CAM2</p></div></div></div></section>
+</main>
+<footer><div class="wrap footer-row"><span>© 2026 Verde Amarelha Express · Grupo Amarelha SAC</span><span>Lubricantes CAM2 · Huancayo, Perú</span></div></footer>
+
+<button class="ai-launcher" id="aiLauncher" aria-label="Abrir asistente virtual">
+  <span class="bot-dot">✦</span> Asistente IA
+</button>
+<section class="ai-chat" id="aiChat" aria-label="Chat de atención CAM2">
+  <div class="ai-chat-head">
+    <div class="ai-avatar">✦</div>
+    <div class="ai-head-text"><strong>Asistente Verde Amarelha</strong><small>● Asesor virtual CAM2</small></div>
+    <button class="ai-close" id="aiClose" aria-label="Cerrar chat">×</button>
+  </div>
+  <div class="ai-messages" id="aiMessages">
+    <div class="ai-msg bot">¡Hola! 👋 Soy el asistente virtual de Verde Amarelha Express. Puedo ayudarte a conocer el catálogo CAM2 y orientarte según tu vehículo. ¿Qué necesitas?</div>
+  </div>
+  <div class="ai-quick" id="aiQuick">
+    <button data-question="Tengo un automóvil, ¿qué lubricante del catálogo puedo revisar?">🚗 Automóvil</button>
+    <button data-question="Tengo una moto de 4 tiempos, ¿qué opciones hay?">🏍️ Moto</button>
+    <button data-question="¿Qué aceites tienen para motores diésel?">🚚 Diésel</button>
+    <button data-question="Quiero solicitar una cotización.">💬 Cotizar</button>
+  </div>
+  <div class="ai-typing" id="aiTyping">El asistente está escribiendo...</div>
+  <form class="ai-input-row" id="aiForm">
+    <input id="aiInput" maxlength="1000" autocomplete="off" placeholder="Escribe tu consulta..." aria-label="Escribe tu consulta">
+    <button type="submit" aria-label="Enviar mensaje">➤</button>
+  </form>
+  <div class="ai-disclaimer">Orientación informativa. Verifica siempre el manual del vehículo y confirma disponibilidad y precio con un asesor.</div>
+</section>
+
+<a class="whatsapp-float" href="https://wa.me/51950893901" target="_blank">WhatsApp ↗</a>
+<script>
+const filters=document.querySelectorAll('.filter'),cards=document.querySelectorAll('.product-card');
+filters.forEach(btn=>btn.addEventListener('click',()=>{filters.forEach(x=>x.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;cards.forEach(c=>c.style.display=(f==='all'||c.dataset.cat===f)?'':'none')}));
+function askProduct(product){document.getElementById('product').value=product;document.getElementById('cotizador').scrollIntoView({behavior:'smooth'});}
+document.getElementById('quoteForm').addEventListener('submit',e=>{e.preventDefault();const n=document.getElementById('name').value;const p=document.getElementById('product').value||'Necesito orientación';const v=document.getElementById('vehicle').value;const m=document.getElementById('message').value;const text=`Hola, soy ${n}. Quisiera cotizar: ${p}. Tipo de vehículo: ${v||'No especificado'}. Mensaje: ${m||'Sin mensaje adicional'}. ¿Podrían brindarme información sobre precio y disponibilidad?`;window.open('https://wa.me/51950893901?text='+encodeURIComponent(text),'_blank')});
+
+// Chatbot con IA: se comunica con el backend /api/chat.
+// La clave de OpenAI permanece en el servidor y nunca se expone en el navegador.
+const aiLauncher=document.getElementById('aiLauncher');
+const aiChat=document.getElementById('aiChat');
+const aiClose=document.getElementById('aiClose');
+const aiMessages=document.getElementById('aiMessages');
+const aiForm=document.getElementById('aiForm');
+const aiInput=document.getElementById('aiInput');
+const aiTyping=document.getElementById('aiTyping');
+const aiQuick=document.getElementById('aiQuick');
+const aiHistory=[];
+aiLauncher.addEventListener('click',()=>{aiChat.classList.toggle('open');if(aiChat.classList.contains('open'))aiInput.focus()});
+aiClose.addEventListener('click',()=>aiChat.classList.remove('open'));
+function addAiMessage(text,who){
+  const el=document.createElement('div');el.className='ai-msg '+who;el.textContent=text;
+  aiMessages.appendChild(el);aiMessages.scrollTop=aiMessages.scrollHeight;return el;
+}
+async function sendAiMessage(text){
+  const clean=(text||'').trim();if(!clean)return;
+  addAiMessage(clean,'user');aiHistory.push({role:'user',content:clean});
+  aiInput.value='';aiTyping.style.display='block';aiQuick.style.display='none';
+  try{
+    const response=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:aiHistory.slice(-12)})});
+    const data=await response.json();
+    if(!response.ok)throw new Error(data.error||'No se pudo conectar con el asistente.');
+    const answer=data.reply||'No pude generar una respuesta. Intenta nuevamente.';
+    aiHistory.push({role:'assistant',content:answer});addAiMessage(answer,'bot');
+  }catch(err){
+    const msg=err.message.includes('Failed to fetch')||err.message.includes('NetworkError')
+      ?'No se pudo conectar con el servidor de IA. Verifica que la página esté ejecutándose con el servidor y que la configuración esté completa.'
+      :err.message;
+    addAiMessage(msg,'bot');
+  }finally{aiTyping.style.display='none';aiMessages.scrollTop=aiMessages.scrollHeight;}
+}
+aiForm.addEventListener('submit',e=>{e.preventDefault();sendAiMessage(aiInput.value)});
+aiQuick.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>sendAiMessage(b.dataset.question)));
+
+</script>
+</body></html>

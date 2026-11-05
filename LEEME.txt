@@ -1,0 +1,35 @@
+VERDE AMARELHA EXPRESS – WEB + CHATBOT CON IA
+==============================================
+
+CONTENIDO
+- index.html: página web con el chat integrado.
+- assets/: logo, imágenes de catálogo y PDF CAM2 agosto 2026.
+- server.js: servidor que conecta el chat con OpenAI Responses API.
+- package.json: dependencias y comandos.
+- .env.example: plantilla para configurar la clave privada.
+
+IMPORTANTE
+El diseño del chatbot ya está incorporado. Para que responda con inteligencia artificial real,
+es necesario configurar una clave de API de OpenAI y ejecutar la web mediante el servidor Node.js.
+La clave no se debe pegar en index.html ni compartir públicamente.
+
+CONFIGURACIÓN (requiere Node.js instalado)
+1. Descomprime la carpeta.
+2. Abre una terminal dentro de la carpeta.
+3. Ejecuta: npm install
+4. Copia .env.example y crea un archivo llamado .env en la misma carpeta.
+5. En .env, reemplaza el valor de OPENAI_API_KEY por tu clave privada.
+6. Ejecuta: npm start
+7. Abre en Chrome: http://localhost:3000
+
+MODELO
+El servidor usa OPENAI_MODEL=gpt-6-astra por defecto. Puedes cambiarlo en .env por un modelo
+habilitado en tu proyecto de API.
+
+RECOMENDACIONES
+- La API puede generar costos según el uso y el modelo; revisa la facturación y límites de tu cuenta.
+- Nunca publiques el archivo .env ni subas la clave a GitHub.
+- Para publicar la página, despliega el servidor Node.js en un hosting que soporte backend.
+  Un hosting estático por sí solo no ejecuta server.js.
+- Antes de usarlo comercialmente, verifica teléfono, dirección, datos de productos y permisos de marca.
+- El asistente no confirma compatibilidad, precio ni stock: orienta con el catálogo y deriva al asesor.
