@@ -138,29 +138,41 @@ const aiForm=document.getElementById('aiForm');
 const aiInput=document.getElementById('aiInput');
 const aiTyping=document.getElementById('aiTyping');
 const aiQuick=document.getElementById('aiQuick');
-const aiHistory=[];
+// Asistente local gratuito: no utiliza API ni servicios de pago.
+let chatVehicle="";
+function normalizeChat(value){
+  return String(value||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9 ]/g," ").replace(/\s+/g," ").trim();
+}
+const chatHas=(text,words)=>words.some(word=>text.includes(word));
+const chatContact="Para consultar precios, disponibilidad o realizar un pedido, escribe a WhatsApp: +51 950 893 901 (https://wa.me/51950893901).";
+const chatManual="La compatibilidad depende de la viscosidad y las normas indicadas en el manual de tu vehículo; no basta con saber la marca o el año.";
+function chatAnswer(message){
+  const t=normalizeChat(message);
+  if(!t)return "Escribe tu consulta y te ayudaré con el catálogo CAM2.";
+  if(chatHas(t,["hola","buenas","buenos dias","saludos","hey"]))return "¡Hola! Soy el asistente gratuito de Verde Amarelha Express. Puedo mostrar lubricantes CAM2 para autos, motos, motores diésel y transmisiones, o ayudarte a cotizar. ¿Qué vehículo tienes?";
+  if(chatHas(t,["precio","cuanto cuesta","costo","cotiza","cotizacion","comprar","pedido","stock","disponible","whatsapp","asesor","contacto"]))return chatContact;
+  if(chatHas(t,["direccion","ubicacion","donde estan","donde queda","horario","tienda"]))return "Nos encontramos en Av. Ferrocarril 1967, El Tambo, Huancayo. Para confirmar horarios y atención, contáctanos al WhatsApp +51 950 893 901.";
+  if(chatHas(t,["catalogo","productos","que venden","que tienen","lubricantes cam2"]))return "En el catálogo CAM2 encontrarás aceites para motores a gasolina y diésel, motos 4T, transmisiones, ATF, hidráulicos y grasas. Puedes ver el catálogo en esta página. ¿Qué tipo de vehículo o producto buscas?";
+  if(chatHas(t,["moto","motocicleta","scooter","jaso"])){chatVehicle="moto";return "Para motos de 4 tiempos, el catálogo incluye CAM2 X-Cross 1 sintético 10W40 API SP/JASO MA2, X-Cross Pro 4T semisintético 15W50 API SN/JASO MA2 y Motorcycle 4T mineral 20W50 o 25W60 API SN/JASO MA2. "+chatManual+" Dime marca, modelo, año y la especificación del manual.";}
+  if(chatHas(t,["diesel","petrolero","camion","camioneta diesel","ck 4","ci 4"])){chatVehicle="diesel";return "Para motores diésel, el catálogo incluye CAM2 semisintético 10W40 y 15W40 CK-4/SN, mineral 15W40 CI-4, y opciones 25W50/25W60 CF-4. "+chatManual+" ¿Qué marca, modelo, año y norma exige tu motor?";}
+  if(chatHas(t,["caja","transmision","diferencial","engranaje","gear","atf","hidrolina"])){chatVehicle="transmision";return "Para transmisiones, el catálogo incluye Gear Lubricant SAE 80W90 y 85W140 API GL-5 y ATF D3M. No son intercambiables: revisa el tipo exacto de fluido que exige el fabricante. ¿Es caja manual, automática o diferencial?";}
+  if(chatHas(t,["hidraulico","hydrofluid","iso 68","grasa","engrase"])){return "El catálogo incluye CAM2 Hydrofluid AW ISO 68 y grasas MP Red Grease NLGI 3 de litio y MP Red LDGrease NLGI 3 de calcio. Indícame el equipo y la especificación requerida para orientarte.";}
+  if(chatHas(t,["auto","automovil","carro","gasolina","gasolinero","toyota","corolla","hyundai","kia","nissan","chevrolet","suzuki","honda","volkswagen","mazda","motor"])){chatVehicle="auto";return "Para motores a gasolina, el catálogo CAM2 incluye sintéticos 5W30 API SP/GF-6 y 5W40 API SP/ACEA A3/B4; semisintéticos 10W30 y 10W40; y opciones minerales. "+chatManual+" ¿Cuál es la marca, modelo, año, motor y viscosidad recomendada en el manual?";}
+  if(chatHas(t,["5w30","5w40","10w30","10w40","15w40","15w50","20w50","25w60","80w90","85w140"])){return "Tenemos varias viscosidades CAM2 en el catálogo, pero para identificar la presentación correcta necesito saber si es auto, moto, diésel o transmisión, y qué norma API/ACEA/JASO/GL exige el fabricante. "+chatManual;}
+  if(chatHas(t,["gracias","muchas gracias"]))return "¡Con gusto! Si necesitas precios o disponibilidad, escríbenos al WhatsApp +51 950 893 901.";
+  return "Puedo ayudarte con el catálogo CAM2, aceites para autos, motos, motores diésel, transmisiones y cotizaciones. "+(chatVehicle?"Si ya tienes el vehículo identificado, dime qué viscosidad y norma pide su manual.":"¿Qué tipo de vehículo o producto buscas?")+" "+chatContact;
+}
 aiLauncher.addEventListener('click',()=>{aiChat.classList.toggle('open');if(aiChat.classList.contains('open'))aiInput.focus()});
 aiClose.addEventListener('click',()=>aiChat.classList.remove('open'));
 function addAiMessage(text,who){
   const el=document.createElement('div');el.className='ai-msg '+who;el.textContent=text;
   aiMessages.appendChild(el);aiMessages.scrollTop=aiMessages.scrollHeight;return el;
 }
-async function sendAiMessage(text){
+function sendAiMessage(text){
   const clean=(text||'').trim();if(!clean)return;
-  addAiMessage(clean,'user');aiHistory.push({role:'user',content:clean});
-  aiInput.value='';aiTyping.style.display='block';aiQuick.style.display='none';
-  try{
-    const response=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:aiHistory.slice(-12)})});
-    const data=await response.json();
-    if(!response.ok)throw new Error(data.error||'No se pudo conectar con el asistente.');
-    const answer=data.reply||'No pude generar una respuesta. Intenta nuevamente.';
-    aiHistory.push({role:'assistant',content:answer});addAiMessage(answer,'bot');
-  }catch(err){
-    const msg=err.message.includes('Failed to fetch')||err.message.includes('NetworkError')
-      ?'No se pudo conectar con el servidor de IA. Verifica que la página esté ejecutándose con el servidor y que la configuración esté completa.'
-      :err.message;
-    addAiMessage(msg,'bot');
-  }finally{aiTyping.style.display='none';aiMessages.scrollTop=aiMessages.scrollHeight;}
+  addAiMessage(clean,'user');
+  aiInput.value='';aiQuick.style.display='none';aiTyping.style.display='none';
+  addAiMessage(chatAnswer(clean),'bot');
 }
 aiForm.addEventListener('submit',e=>{e.preventDefault();sendAiMessage(aiInput.value)});
 aiQuick.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>sendAiMessage(b.dataset.question)));
