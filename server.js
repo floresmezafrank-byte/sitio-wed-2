@@ -1,19 +1,16 @@
 import express from "express";
 import OpenAI from "openai";
 import dotenv from "dotenv";
-import path from "path";
-import { fileURLToPath } from "url";
 
 dotenv.config();
+
 const app = express();
 const PORT = process.env.PORT || 3000;
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const client = process.env.OPENAI_API_KEY
   ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
   : null;
 
 app.use(express.json({ limit: "30kb" }));
-app.use(express.static(__dirname));
 
 const catalogContext = `
 NEGOCIO: Verde Amarelha Express / Grupo Amarelha SAC.
@@ -48,31 +45,39 @@ app.post("/api/chat", async (req, res) => {
   try {
     if (!client) {
       return res.status(503).json({
-        error: "El asistente IA aún no está configurado. El administrador debe agregar OPENAI_API_KEY en el archivo .env del servidor."
+        error: "El asistente IA aún no está configurado. El administrador debe agregar OPENAI_API_KEY en las variables de entorno de Vercel."
       });
     }
+
     const messages = req.body?.messages;
     if (!Array.isArray(messages) || messages.length === 0 || messages.length > 12) {
       return res.status(400).json({ error: "La conversación no tiene un formato válido." });
     }
+
     const safeMessages = messages.map((m) => {
       if (!["user", "assistant"].includes(m?.role) || typeof m?.content !== "string") {
         throw new Error("Mensaje no válido.");
       }
       return { role: m.role, content: m.content.slice(0, 1000) };
     });
+
     const response = await client.responses.create({
-      model: process.env.OPENAI_MODEL || "gpt-6-astra",
+      model: process.env.OPENAI_MODEL || "gpt-4.1-mini",
       instructions: `Eres el asistente virtual de Verde Amarelha Express – CAM2.\n${catalogContext}`,
       input: safeMessages
     });
-    return res.json({ reply: response.output_text || "No pude generar una respuesta. Intenta nuevamente." });
+
+    return res.json({
+      reply: response.output_text || "No pude generar una respuesta. Intenta nuevamente."
+    });
   } catch (error) {
     console.error("Error en /api/chat:", error?.message || error);
-    return res.status(500).json({ error: "Ocurrió un problema al responder. Intenta nuevamente o contacta a un asesor por WhatsApp." });
+    return res.status(500).json({
+      error: "Ocurrió un problema al responder. Intenta nuevamente o contacta a un asesor por WhatsApp."
+    });
   }
 });
 
 app.listen(PORT, () => {
-  console.log(`Verde Amarelha Express disponible en http://localhost:${PORT}`);
+  console.log(`Verde Amarelha Express disponible en el puerto ${PORT}`);
 });
