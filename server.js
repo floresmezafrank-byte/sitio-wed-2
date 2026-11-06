@@ -1,6 +1,8 @@
 import express from "express";
 import OpenAI from "openai";
 import dotenv from "dotenv";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 dotenv.config();
 
@@ -11,6 +13,9 @@ const client = process.env.OPENAI_API_KEY
   : null;
 
 app.use(express.json({ limit: "30kb" }));
+const publicDir = path.join(path.dirname(fileURLToPath(import.meta.url)), "public");
+app.use(express.static(publicDir));
+app.get("/", (_req, res) => res.sendFile(path.join(publicDir, "index.html")));
 
 const catalogContext = `
 NEGOCIO: Verde Amarelha Express / Grupo Amarelha SAC.
